@@ -1,0 +1,183 @@
+/* ===== Base ===== */
+:root {
+  --primary: #2d6cdf;
+  --primary-dark: #1a4bb8;
+  --bg-light: #f4f6f8;
+  --bg-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #e0e0e0;
+  --card-light: #fff;
+  --card-dark: #2a2a2a;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  color: var(--primary);
+  text-align: center;
+  margin-top: 0;
+}
+
+/* ===== Navbar ===== */
+nav {
+  background-color: var(--primary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--primary-dark);
+}
+
+body.dark nav {
+  background-color: var(--primary-dark);
+}
+
+/* ===== Main Container ===== */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: var(--card-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+body.dark .container {
+  background: var(--card-dark);
+}
+
+/* ===== Forms ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input, select {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+  transition: border 0.2s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+body.dark input, 
+body.dark select {
+  background-color: #333;
+  color: var(--text-dark);
+  border: 1px solid #555;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ===== Table Styling ===== */
+.table-container {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #f5f7fa;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f9fafc;
+}
+
+body.dark th {
+  background-color: #2e2e2e;
+}
+
+body.dark tr:hover {
+  background-color: #333;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  th, td {
+    padding: 0.75rem;
+  }
+}
