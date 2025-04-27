@@ -7,12 +7,12 @@ const StudentList = () => {
   const [students, setStudents] = useState([]);
 
   const fetchStudents = async () => {
-    const res = await axios.get("https://wtassignment2.onrender.com/students");
+    const res = await axios.get("https://wtassignment2-wq98.onrender.com/students");
     setStudents(res.data);
   };
 
   const deleteStudent = async (id) => {
-    await axios.delete(`https://wtassignment2.onrender.com/students/${id}`);
+    await axios.delete(`https://wtassignment2-wq98.onrender.com/students/${id}`);
     fetchStudents();
   };
 
