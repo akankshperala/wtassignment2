@@ -1,13 +1,13 @@
 /* ===== Base ===== */
 :root {
-  --primary: #2d6cdf;
-  --primary-dark: #1a4bb8;
+  --primary: #4CAF50; /* Changed to green */
+  --primary-dark: #388E3C;
   --bg-light: #f4f6f8;
-  --bg-dark: #1e1e1e;
+  --bg-dark: #121212; /* Darker background for dark mode */
   --text-light: #333;
   --text-dark: #e0e0e0;
   --card-light: #fff;
-  --card-dark: #2a2a2a;
+  --card-dark: #1e1e1e; /* Darker card background */
 }
 
 body {
@@ -24,7 +24,6 @@ body.dark {
   color: var(--text-dark);
 }
 
-/* ===== Headings ===== */
 h1, h2 {
   color: var(--primary);
   text-align: center;
@@ -99,6 +98,8 @@ input, select {
 input:focus, select:focus {
   border-color: var(--primary);
   outline: none;
+  background-color: #eaf7ff; /* Light background change on focus */
+  transition: border 0.2s ease, background-color 0.3s ease;
 }
 
 body.dark input, 
@@ -123,6 +124,8 @@ button {
 
 button:hover {
   background-color: var(--primary-dark);
+  transform: scale(1.05); /* Adds a scaling effect */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 /* ===== Table Styling ===== */
@@ -149,7 +152,7 @@ th {
 }
 
 tr:hover {
-  background-color: #f9fafc;
+  background-color: #e0f7fa; /* Lighter hover color */
 }
 
 body.dark th {
@@ -157,7 +160,7 @@ body.dark th {
 }
 
 body.dark tr:hover {
-  background-color: #333;
+  background-color: #444; /* Darker hover color in dark mode */
 }
 
 .actions {
@@ -169,15 +172,20 @@ body.dark tr:hover {
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    align-items: flex-start;
+    gap: 0.5rem; /* Adjusted gap between items */
+  }
+
+  nav a {
+    padding: 0.5rem 2rem; /* Adjusted padding for better mobile UI */
   }
 
   .container {
+    width: 100%; /* Full width on small screens */
     padding: 1rem;
   }
 
   th, td {
-    padding: 0.75rem;
+    padding: 0.5rem; /* Reduced padding for mobile */
   }
 }
