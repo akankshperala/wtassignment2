@@ -19,7 +19,7 @@ const EditStudent = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`https://wtassignment2.onrender.com/studentsstudents/${id}`).then((res) => {
+    axios.get(`https://wtassignment2-wq98.onrender.com/studentsstudents/${id}`).then((res) => {
       setStudent(res.data);
     });
   }, [id]);
@@ -35,7 +35,7 @@ const EditStudent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://wtassignment2.onrender.com/students/${id}`, {
+      await axios.put(`https://wtassignment2-wq98.onrender.com/students/${id}`, {
         ...student,
         enrollmentYear: Number(student.enrollmentYear),
       });
